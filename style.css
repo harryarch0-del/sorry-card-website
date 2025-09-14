@@ -1,0 +1,110 @@
+/* General */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(270deg, #a0e7ff, #d0f0ff, #ffffff);
+    background-size: 600% 600%;
+    animation: gradientShift 15s ease infinite;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  
+  .center {
+    max-width: 90%;
+    padding: 1.5em;
+    z-index: 2;
+  }
+  
+  .title { font-size: clamp(2em, 6vw, 3em); margin-bottom: 0.3em; }
+  .subtitle { font-size: clamp(1em, 4vw, 1.2em); margin-bottom: 1.5em; }
+  
+  .btn {
+    display: inline-block;
+    background: #66ccff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: clamp(1em, 4vw, 1.2em);
+    border: none;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .btn:hover { transform: scale(1.1); background: #33b5ff; }
+  
+  .choices { display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; }
+  
+  .no { background: #ff8080; }
+  .no:active { animation: shake 0.4s; }
+  
+  /* Card */
+  .card {
+    background: white;
+    padding: 2em;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    font-size: 1.1em;
+    line-height: 1.6;
+    animation: fadeIn 1.5s ease;
+  }
+  
+  /* Background */
+  .bubbles-bg {
+    background: linear-gradient(135deg, #d6f3ff, #b3e5ff);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+  @keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    60% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+  @keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-6px); }
+    100% { transform: translateX(0); }
+  }
+  
+  /* Confetti */
+  #confetti {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  /* Floating Bubbles (Images) */
+  .floating-bubble {
+    position: absolute;
+    width: 50px; height: 50px;
+    background: url("images/bubble.png") no-repeat center/contain;
+    bottom: -60px;
+    animation: rise 8s infinite ease-in;
+    opacity: 0.8;
+  }
+  @keyframes rise {
+    from { transform: translateY(0) scale(0.8); opacity: 0; }
+    to { transform: translateY(-110vh) scale(1.2); opacity: 1; }
+  }
+  
